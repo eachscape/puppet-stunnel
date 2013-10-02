@@ -17,7 +17,7 @@ describe 'stunnel::tunnel' do
 
   it 'creates the fragment' do
     should contain_concat__fragment("stunnel_fragment_#{title}").
-      with (
+      with(
         :target => '/test/boxen/config/stunnel/stunnel.conf'
       )
   end

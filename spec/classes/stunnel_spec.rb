@@ -17,7 +17,7 @@ describe 'stunnel' do
       :notify => 'Service[dev.stunnel]',
       :owner  => 'root'
     })
-
+    
     should contain_file('/test/boxen/config/stunnel').with_ensure('directory')
     should contain_file('/test/boxen/data/stunnel').with_ensure('directory')
     should contain_file('/test/boxen/log/stunnel').with_ensure('directory')
@@ -33,9 +33,6 @@ describe 'stunnel' do
       :recurse => true,
       :require => 'Package[stunnel]'
     })
-
-    should contain_homebrew__formula('stunnel').
-      with_before('Package[stunnel]')
 
     should contain_package('stunnel').with({
       :ensure => '4.56',

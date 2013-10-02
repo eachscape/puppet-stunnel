@@ -53,6 +53,10 @@ options = NO_SSLv2
 ; Use it for client mode
 client = yes
 
+; Don't daemonize, since we wil be using launchd
+foreground = yes
+
 ; **************************************************************************
 ; * Service definitions (remove all services for inetd mode)               *
 ; **************************************************************************
+

@@ -5,16 +5,15 @@
     <key>Label</key>
     <string>dev.stunnel</string>
 
-    <key>Boxen</key>
+    <key>stunnel</key>
     <dict>
       <key>Description</key>
-      <string>A fast web server.</string>
+      <string>A service for tunneling connections over SSL.</string>
     </dict>
 
     <key>ProgramArguments</key>
     <array>
       <string><%= scope.lookupvar "stunnel::config::executable" %></string>
-      <string>-c</string>
       <string><%= scope.lookupvar "stunnel::config::configfile" %></string>
     </array>
 
@@ -23,7 +22,10 @@
     <true />
 
     <key>KeepAlive</key>
-    <true />
+    <dict>
+      <key>NetworkState</key>
+      <true/>
+    </dict>
 
     <key>WorkingDirectory</key>
     <string><%= scope.lookupvar "stunnel::config::datadir" %></string>

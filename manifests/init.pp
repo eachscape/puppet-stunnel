@@ -26,8 +26,6 @@ class stunnel {
   }
 
   concat { $stunnel::config::configfile:
-    owner  => root,
-    group  => root,
     mode   => '0644',
     notify => Service['dev.stunnel']
   }
@@ -44,11 +42,6 @@ class stunnel {
     force   => true,
     recurse => true,
     require => Package['stunnel']
-  }
-
-
-  homebrew::formula { 'stunnel':
-    before => Package['stunnel'],
   }
 
   package { 'stunnel':
