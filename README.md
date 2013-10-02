@@ -9,8 +9,8 @@ include stunnel
 
 # Tunnel redis connections
 stunnel::tunnel { "redis":
-  port 6379,  # The port to listen on locally
-  host "tunnel-server.example.com:1234"  # The stunnel server and port
+  accept  => 6379,  # The port to listen on locally
+  connect => "tunnel-server.example.com:1234"  # The stunnel server and port
 }
 ```
 
